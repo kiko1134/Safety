@@ -24,7 +24,8 @@ init_db()
 @login_required
 def home():
     role = current_user.get_role()
-    return render_template("index.html", role=role)
+    # return render_template("index.html", role=role)
+    return render_template("home.html")
 
 
 @app.route('/login', methods=['GET', 'POST'])
