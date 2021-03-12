@@ -21,9 +21,8 @@ init_db()
 
 
 @app.route('/')
-@login_required
 def home():
-    role = current_user.get_role()
+    #role = current_user.get_role()
     # return render_template("index.html", role=role)
     return render_template("home.html")
 
