@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <title>Register</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+<style>
+.logo {
+    font-size: 65px;
+    transition-timing-function: ease-out;
+    text-align: center;
+    padding-top: 100px;
+    -webkit-animation-duration: 10s;
+    animation-duration: 1.5s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+.loginText {
+    font-size: 30px;
+    transition-timing-function: ease-out;
+    text-align: center;
+    padding-bottom: 10px;
+    -webkit-animation-duration: 10s;
+    animation-duration: 2.5s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+
+@-webkit-keyframes fadeInDown {
+    0% {
+       opacity: 0;
+       -webkit-transform: translateY(-20px);
+    }
+    100% {
+       opacity: 1;
+       -webkit-transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    0% {
+       opacity: 0;
+       transform: translateY(-20px);
+    }
+    100% {
+       opacity: 1;
+       transform: translateY(0);
+    }
+}
+
+.fadeInDown {
+    -webkit-animation-name: fadeInDown;
+    animation-name: fadeInDown;
+}
+
+</style>
+</head>
+
+
+<body>
+    <div class="logo fadeInDown">2HandRetailing</div>
+    <div class="loginText fadeInDown">Register</div>
+
+    <div class="container">
+      <form action="/register" method="post">
+        <div class="form-group">
+          <label for="usr">Name:</label>
+          <input name="username" class="form-control" type="text"/>
+        </div>
+        <div class="form-group">
+          <label for="pwd">Password:</label>
+          <input name="password" class="form-control" type="password"/>
+        </div>
+        <div class="form-group">
+            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+              <label class="btn btn-secondary active">
+                <input type="radio" name="profile_type" id="customer" value="customer" autocomplete="off" checked> I am a Customer
+              </label>
+              <label class="btn btn-secondary">
+                <input type="radio" name="profile_type" id="supplier" value="supplier" autocomplete="off"> I am a Supplier
+              </label>
+            </div>
+        </div>
+          <button class="btn btn-basic" type="submit" value="Submit">Submit</button>
+      </form>
+    </div>
+</body>
