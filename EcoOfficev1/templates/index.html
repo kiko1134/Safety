@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <title>Home</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+    <link rel="stylesheet" href="/static/index.css">
+</head>
+
+<body>
+
+<div class="header">
+
+    <nav class="navbar navbar-expand-lg navbar-fixed-top navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/">2HandRetailing</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="/">About Us</a>
+              </li>
+              {% if role == 'supplier' %}
+                <li class="nav-item">
+                    <a class="nav-link" href="/add">Add a product</a>
+                </li>
+              {% endif %}
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+    </nav>
+
+        <div class="role">
+            <p>You are viewing this page as a {{ role }}</p>
+        </div>
+
+{#        {% for product in products %}#}
+{#            <div class="productPhoto">#}
+{#                <img src="/static/images/no-image-icon.png">  <!-- TODO need to astdd product photo -->#}
+{#                <div class="container">#}
+{#                    <div class="containerText">#}
+{#                        <a href="#">{{ product.name }} | {{ product.company }}</a>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+{#        {% endfor %}#}
+
+
+    <div class="WindowsThemes">
+         <div class="container">
+            {% for product in products %}
+            <div class="row">
+                <div class="Column">
+                    <div class="portfolio-item">
+                    <div class="ImgColumn">
+                        <img src="/static/images/no-image-icon2.png">
+                    </div>
+                    <div class="TitleColumn">
+                        <a href="#">{{ product.name }} | {{ product.company }}</a>
+                    </div>
+                    </div>
+                </div>
+            {% endfor %}
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+</div>
+
+
+</body>
+
+</html>
