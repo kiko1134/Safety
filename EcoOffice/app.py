@@ -7,10 +7,14 @@ from flask_login import login_user, login_required, current_user, logout_user
 from werkzeug.middleware.shared_data import SharedDataMiddleware
 from werkzeug.security import generate_password_hash, check_password_hash
 from werkzeug.utils import secure_filename
+import logging
+from flask_bootstrap import Bootstrap
+
 
 from database import db_session, init_db
 from login import login_manager
 from models import User
+from models import Product
 
 app = Flask(__name__)
 
@@ -54,6 +58,28 @@ def register():
         db_session.add(user)
         db_session.commit()
         return redirect(url_for('login'))
+
+
+@app.route('/product', methods=['GET', 'POST'])
+def product():
+    if request.method == 'GET':
+        return render_template('product.html')
+    else:
+        username = request.form['username']
+        description = request.form['password']
+        company = request.form['company']
+        product = Product(username=username, description=description, company=company)
+        db_session.add(product)
+        db_session.commit()
+        response = make_response(redirect(url_for('home')))
+        return response
+
+@app.route('/home')
+def list_all():
+    return render_template('index.html', products=Product.all())
+
+
+
 
 
 if __name__ == '__main__':

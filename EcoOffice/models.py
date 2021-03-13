@@ -36,3 +36,31 @@ class User(Base):
 
     def __repr__(self):
         return '<User %r>' % self.username
+
+class Product(Base):
+    __tablename__ = 'Product'
+    id = Column(Integer, primary_key=True)
+    username = Column(String(80), unique=True, nullable=False)
+    login_id = Column(String(36), nullable=True)
+    description = Column(String(500), nullable=False)
+    company = Column(String(50), nullable=False)
+    email = Column(String(50), nullable=False)
+    number = Column(String(10), nullable=False)
+    # profile_type = Column(String(8), nullable=False)
+
+    def get_username(self):
+        return self.username
+
+    def get_description(self):
+        return self.description
+
+    def get_company(self):
+        return self.company
+
+    def get_email(self):
+        return self.email
+
+    def get_number(self):
+        return self.number
+
+
