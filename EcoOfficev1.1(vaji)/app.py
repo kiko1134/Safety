@@ -1,7 +1,7 @@
 import uuid
 import os
-
-from flask import Flask
+import logging
+from flask import Flask,flash
 from flask import render_template, request, redirect, make_response, url_for
 from flask_login import login_user, login_required, current_user, logout_user
 from werkzeug.middleware.shared_data import SharedDataMiddleware
@@ -18,6 +18,10 @@ app.secret_key = "ssucuuh398nuwetubr33rcuhne"
 
 login_manager.init_app(app)
 init_db()
+
+logging.basicConfig(filename='logs',
+                    format='%(levelname)s  %(asctime)s : %(message)s',
+                    datefmt='%m/%d/%Y %I:%M:%S %p', level=logging.DEBUG)
 
 
 @app.route('/')
@@ -47,9 +51,14 @@ def login():
         response = make_response(redirect(url_for('products')))
         user = User.query.filter_by(username=request.form['username']).first()
         if user and check_password_hash(user.password, request.form['password']):
+            logging.info("User %s logged in", request.form['username'])
+            flash('Login seccessful', "info")
             user.login_id = str(uuid.uuid4())
             db_session.commit()
             login_user(user)
+        else:
+            logging.warning("User %s couldn't log in.", request.form["username"])
+            flash("Login unsuccessful!", "error")
     return response
 
 
