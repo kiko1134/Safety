@@ -12,45 +12,10 @@
 
 }
 
-nav{
-    width:80%;
-    position: sticky;
-    margin: 20px auto;
-    z-index:1;
-    display: flex;
-    align-items: center;
-}
-
-.nav_links{
-    flex:1;
-    text-align: right;
-
-}
-.nav_links ul li{
-    list-style: none;
-    display: inline-block;
-    margin: 0px 10px;
-}
-
-.nav_links ul li a{
-    color: #070101;
-    text-decoration: none;
-    border: 1px solid;
-    padding: 5px;
-    box-shadow: 5px 10px #1a0202;
-}
-
-.nav_links a{
-    font-size: 23px;
-}
-
 
 .site_title p{
     font-size: 30px;
 }
-
-
-
 
 
 .content p{
@@ -73,9 +38,7 @@ h2{
     font-size: 50px;
 }
 
-nav.site_title{
-    width: 50%;
-}
+
 
 html {
   height:100%;
@@ -132,3 +95,5 @@ h1 {
     transform:translateX(25%);
   }
 }
+
+
