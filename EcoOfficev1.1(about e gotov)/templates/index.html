@@ -20,7 +20,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-fixed-top navbar-dark bg-dark">
         <div class="container-fluid">
-          <a class="navbar-brand" href="/">2HandRetailing</a>
+          <a class="navbar-brand" href="/">EcoOffice</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -58,31 +58,30 @@
 {#                </div>#}
 {#            </div>#}
 {#        {% endfor %}#}
+<div class="bg"></div>
+<div class="bg bg2"></div>
+<div class="bg bg3"></div>
+    <div class="content">
 
-
-    <div class="WindowsThemes">
-         <div class="container">
-            {% for product in products %}
-            <div class="row">
-                <div class="Column">
-                    <div class="portfolio-item">
-                    <div class="ImgColumn">
-                        <img src="/static/images/no-image-icon2.png">
+        <div class="WindowsThemes">
+             <div class="container">
+                {% for product in products %}
+                <div class="row">
+                    <div class="Column">
+                        <div class="portfolio-item">
+                            <div class="ImgColumn">
+                                <img src="/static/images/no-image-icon2.png">
+                            </div>
+                            <div class="TitleColumn">
+                                <a href="/review_desc/{{ product.id }}">{{ product.name }} | {{ product.company }}</a>
+                            </div>
+                        </div>
                     </div>
-                    <div class="TitleColumn">
-                        <a href="/review_desc/{{ product.id }}">{{ product.name }} | {{ product.company }}</a>
-                    </div>
-                    </div>
+                {% endfor %}
                 </div>
-            {% endfor %}
             </div>
         </div>
     </div>
-
-
-
-
-
 </div>
 
 
