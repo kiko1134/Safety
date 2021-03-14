@@ -32,6 +32,12 @@ def products():
     return render_template("index.html", role=role, products=Product.query.all(), all=db_session.query(Product).count())
 
 
+@app.route('/desc_r/<int:des_id>')
+def description(des_id):
+    review = Product.query.get(des_id)
+    return render_template('desc_review.html', review=review)
+
+
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     response = None

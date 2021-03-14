@@ -9,7 +9,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-    <link rel = "stylesheet" href="../static/descript_review.css">
+    <link rel = "stylesheet" href="../static/desc_review.css">
 
 
 </head>
@@ -20,28 +20,24 @@
 <div class="bg bg3"></div>
 <div class="content">
     <div class = main>
-        <div class="logo fadeInDown">Enter product</div>
+        <div class="logo fadeInDown">{{review.name }}</div>
 
         <div class="container">
             <div class="form-group">
-              <label for="name">Name:</label>
-              <p>asdddd</p>
-            </div>
-            <div class="form-group">
               <label for="company">Company:</label>
-               <p>asdddd</p>
+               <p>{{review.company}}</p>
             </div>
             <div class="form-group">
               <label for="email">Email:</label>
-               <p>asdddd</p>
+               <p>{{ review.email }}</p>
             </div>
             <div class="form-group">
               <label for="phone">Your phone number:</label>
-               <p>asdddd</p>
+               <p>{{review.phone_number}}</p>
             </div>
             <div class="form-group">
                 <label for="Description">Description:</label>
-                 <p>asdddd</p>
+                 <p>{{ review.description }}</p>
             </div>
               <button onclick="window.location.href='http://127.0.0.1:5000/products';">
                     Go Back
